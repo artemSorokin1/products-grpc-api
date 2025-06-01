@@ -242,7 +242,7 @@ const file_product_product_proto_rawDesc = "" +
 	"\aproduct\x18\x01 \x01(\v2\x11.products.ProductR\aproduct2Z\n" +
 	"\x0fProductsService\x12G\n" +
 	"\n" +
-	"GetProduct\x12\x1b.products.GetProductRequest\x1a\x1c.products.GetProductResponseB$Z\"artemSorokin1.products.v1;productsb\x06proto3"
+	"GetProduct\x12\x1b.products.GetProductRequest\x1a\x1c.products.GetProductResponseB5Z3github.com/artemSorokin1/products-grpc-api;productsb\x06proto3"
 
 var (
 	file_product_product_proto_rawDescOnce sync.Once
