@@ -17,6 +17,8 @@ message Product {
   google.protobuf.Timestamp created_at = 7;
   google.protobuf.Timestamp updated_at = 8;
   string seller_id = 9;
+  repeated string comments = 10;
+  double rating = 11;
 }
 
 message GetProductRequest {

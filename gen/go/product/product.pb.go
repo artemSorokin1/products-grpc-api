@@ -34,6 +34,8 @@ type Product struct {
 	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,7,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,8,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
 	SellerId      string                 `protobuf:"bytes,9,opt,name=seller_id,json=sellerId,proto3" json:"seller_id,omitempty"`
+	Comments      []string               `protobuf:"bytes,10,rep,name=comments,proto3" json:"comments,omitempty"`
+	Rating        float64                `protobuf:"fixed64,11,opt,name=rating,proto3" json:"rating,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -131,6 +133,20 @@ func (x *Product) GetSellerId() string {
 	return ""
 }
 
+func (x *Product) GetComments() []string {
+	if x != nil {
+		return x.Comments
+	}
+	return nil
+}
+
+func (x *Product) GetRating() float64 {
+	if x != nil {
+		return x.Rating
+	}
+	return 0
+}
+
 type GetProductRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -223,7 +239,7 @@ var File_product_product_proto protoreflect.FileDescriptor
 
 const file_product_product_proto_rawDesc = "" +
 	"\n" +
-	"\x15product/product.proto\x12\bproducts\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/protobuf/struct.proto\"\xc2\x02\n" +
+	"\x15product/product.proto\x12\bproducts\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/protobuf/struct.proto\"\xf6\x02\n" +
 	"\aProduct\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n" +
@@ -235,7 +251,10 @@ const file_product_product_proto_rawDesc = "" +
 	"created_at\x18\a \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
 	"\n" +
 	"updated_at\x18\b \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x12\x1b\n" +
-	"\tseller_id\x18\t \x01(\tR\bsellerId\"#\n" +
+	"\tseller_id\x18\t \x01(\tR\bsellerId\x12\x1a\n" +
+	"\bcomments\x18\n" +
+	" \x03(\tR\bcomments\x12\x16\n" +
+	"\x06rating\x18\v \x01(\x01R\x06rating\"#\n" +
 	"\x11GetProductRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"A\n" +
 	"\x12GetProductResponse\x12+\n" +
