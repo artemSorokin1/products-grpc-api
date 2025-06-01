@@ -36,6 +36,7 @@ type Product struct {
 	SellerId      string                 `protobuf:"bytes,9,opt,name=seller_id,json=sellerId,proto3" json:"seller_id,omitempty"`
 	Comments      []string               `protobuf:"bytes,10,rep,name=comments,proto3" json:"comments,omitempty"`
 	Rating        float64                `protobuf:"fixed64,11,opt,name=rating,proto3" json:"rating,omitempty"`
+	Tags          []string               `protobuf:"bytes,12,rep,name=tags,proto3" json:"tags,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -147,6 +148,13 @@ func (x *Product) GetRating() float64 {
 	return 0
 }
 
+func (x *Product) GetTags() []string {
+	if x != nil {
+		return x.Tags
+	}
+	return nil
+}
+
 type GetProductRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -239,7 +247,7 @@ var File_product_product_proto protoreflect.FileDescriptor
 
 const file_product_product_proto_rawDesc = "" +
 	"\n" +
-	"\x15product/product.proto\x12\bproducts\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/protobuf/struct.proto\"\xf6\x02\n" +
+	"\x15product/product.proto\x12\bproducts\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/protobuf/struct.proto\"\x8a\x03\n" +
 	"\aProduct\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n" +
@@ -254,7 +262,8 @@ const file_product_product_proto_rawDesc = "" +
 	"\tseller_id\x18\t \x01(\tR\bsellerId\x12\x1a\n" +
 	"\bcomments\x18\n" +
 	" \x03(\tR\bcomments\x12\x16\n" +
-	"\x06rating\x18\v \x01(\x01R\x06rating\"#\n" +
+	"\x06rating\x18\v \x01(\x01R\x06rating\x12\x12\n" +
+	"\x04tags\x18\f \x03(\tR\x04tags\"#\n" +
 	"\x11GetProductRequest\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"A\n" +
 	"\x12GetProductResponse\x12+\n" +

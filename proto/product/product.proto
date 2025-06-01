@@ -19,6 +19,7 @@ message Product {
   string seller_id = 9;
   repeated string comments = 10;
   double rating = 11;
+  repeated string tags = 12;
 }
 
 message GetProductRequest {
