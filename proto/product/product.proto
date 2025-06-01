@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package products;
 
-option go_package = "github.com/artemSorokin1/products-grpc-api;products";
+option go_package = "artem.api.products.v1;products";
 
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/struct.proto";
